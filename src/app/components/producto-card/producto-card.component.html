@@ -1,10 +1,22 @@
 
-<div class="card" style="width: 18rem">
+<div id="card">
   <img [src]="producto.img" class="card-img-top" alt="imagen del producto">
-  <div class="card-body">
-    <h5 class="card-title">{{producto.name}}</h5>
-    <p class="card-text">{{producto.breveDescripcion}}</p>
-    <p>{{ producto.price | currency }}</p>
-    <a [routerLink]="['/producto', producto.id]" class="btn btn-primary">Ver más</a>
+
+  <div id="card-body">
+    <h5 class="card-title">
+      {{producto.name}}
+    </h5>
+
+    <p class="card-text">
+      {{producto.breveDescripcion}}
+    </p>
+
+    <p>
+      {{ producto.price | currency }}
+    </p>
+
+    <button class="btn">
+      <a [routerLink]="['/producto', producto.id]" class="btn btn-primary">Más información</a>
+    </button>
   </div>
 </div>

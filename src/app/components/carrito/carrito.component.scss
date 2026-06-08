@@ -1,37 +1,80 @@
-.productosCarrito{
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-bottom: 3%;
+#carrito {
+  grid-area: productos;
+  display: grid;
+  grid-template-columns: 2fr 1fr; 
+  grid-template-areas: "productos resumen";
+  gap: 20px;
+  padding: 20px;
+  background-color: #f5f5f5; 
+  flex-grow: 1;
+  min-height: 0; 
 }
 
-.contendeorProducto{
-    border: 1px solid  rgb(192, 190, 190);
-    display: flex;
-    gap: 10px;
-    border-radius: 5px;
-    padding: 20px;
-    margin-right: 2%
+.productos-agregados {
+  grid-area: productos;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
-img{
-    margin-top: 2px;
-    width: 300px;
+
+.contendeorProducto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 16px;
 }
-.body{
-    margin-top: 5%;
+
+.cabecera {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
-.informacion{
-    display: flex;
-    justify-content: space-between;
-    margin-left: 10%;
-    margin-right: 10%
-   
+
+.cabecera img {
+  width: 100px;
+  border-radius: 8px;
 }
-h2{
-    text-decoration: underline;
-    margin-left: 10%;
-    margin-top: 1%;
+
+.body {
+  text-align: right;
 }
+
+.btn {
+  background-color: #ffb3b3;
+  color: #4b270f;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ff8080;
+}
+
+
+/* Resumen de compra */
+.detalles-compra {
+  grid-area: resumen;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 20px;
+  height: fit-content;
+}
+
+.informacion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .info {
-   text-decoration: underline;
+  font-size: 1.1rem;
+  color: #0d3054;
+  font-weight: 500;
 }

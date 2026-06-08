@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductoCardComponent } from './components/producto-card/producto-card.component';
 import { AllProductosComponent } from './components/all-productos/all-productos.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
-import { ProductoIdComponent } from './components/producto-id/producto-id.component';
+import { ProductoIdComponent } from './components/producto/producto.component';
 import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
 import { ReactiveFormsModule } from '@angular/forms';
 

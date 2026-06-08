@@ -1,6 +1,18 @@
+.title {
+  grid-area: title;
+}
+
 h2{
-    text-decoration: underline;
-    margin-left: 10%;
-    margin-bottom: 2%;
-    margin-top: 1%;
+  text-decoration: underline;
+  margin-left: 10%;
+  margin-bottom: 2%;
+  margin-top: 1%;
+}
+
+.products-container {
+  grid-area: products;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  width: 90%;
+  margin: 0 auto; 
 }

@@ -1,20 +1,32 @@
-<div class="productosCarrito">
-    <h2>Mi carrito</h2>
-    <div class="informacion">
-        <p class="info">Productos: {{totalProductos()}}</p>
-        <p class="info">Total: {{totalMonto() | currency}}</p>
-    </div>
-    <ng-container *ngFor="let producto of productosAgregados; trackBy: trackById">
-    <div class="contendeorProducto">
-        <div class="cabecera">
-            <h5 class="card-title">{{producto.name}}</h5>
-            <img [src]="producto.img" class="card-img-top" alt="imagen del producto" class="card-img-top">
+
+<div id="carrito">
+    <section class="productos-agregados">
+
+        <ng-container *ngFor="let producto of productosAgregados; trackBy: trackById">
+            <div class="contendeorProducto">
+                <div class="cabecera">
+                    <img [src]="producto.img" class="card-img-top" alt="imagen del producto" class="card-img-top">
+                    <h5 class="card-title">{{producto.name}}</h5>
+                </div>
+                <div class="body">
+                    <p>{{ producto.price | currency }}</p>
+                    <button class="btn" (click)="eliminarProducto(producto)">Eliminar</button>
+                </div>
+            </div>
+        </ng-container>
+
+    </section>
+
+    <section class="detalles-compra">
+            <div class="informacion">
+            <p class="info">
+                Productos: {{totalProductos()}}
+            </p>
+
+            <p class="info">
+                Total: {{totalMonto() | currency}}
+            </p>
         </div>
-        <div class="body">
-            <p>{{producto.breveDescripcion}}</p>
-            <p>{{ producto.price | currency }}</p>
-            <button class="btn btn-primary" (click)="eliminarProducto(producto)">Eliminar</button>
-        </div>
-    </div>
-    </ng-container>
+    </section>
 </div>
+

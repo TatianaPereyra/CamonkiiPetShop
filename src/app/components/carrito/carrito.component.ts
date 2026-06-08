@@ -22,7 +22,7 @@ export class CarritoComponent {
     });
   }
 
-  ngOnDestroy(): void { //funcion para desuscribirme
+  ngOnDestroy(): void { 
     if (this.suscripcion) {
       this.suscripcion.unsubscribe();
     }

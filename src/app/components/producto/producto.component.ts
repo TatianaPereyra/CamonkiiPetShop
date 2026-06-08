@@ -8,8 +8,8 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-producto-id',
   standalone: false,
-  templateUrl: './producto-id.component.html',
-  styleUrls: ['./producto-id.component.scss']
+  templateUrl: './producto.component.html',
+  styleUrls: ['./producto.component.scss']
 })
 export class ProductoIdComponent implements OnInit, OnDestroy {
 
