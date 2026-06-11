@@ -15,16 +15,18 @@ export class ProductoIdComponent implements OnInit, OnDestroy {
 
   productoEspecifico!: Product;
   private suscripcion!: Subscription;
+  mostrarMensaje: boolean = false;
 
-  constructor(
+  constructor( //Van las inyecciones de dependencias
     private carrito: CarritoService,
     private data: ProductsDataService,
     private route: ActivatedRoute
   ) {}
 
   agregarCarrito() {
-    this.carrito.agregar(this.productoEspecifico);
-    alert("Producto agregado correctamente");
+    this.carrito.agregar(this.productoEspecifico); 
+    this.mostrarMensaje = true;
+    setTimeout(() => this.mostrarMensaje = false, 3000);
   }
 
   ngOnInit(): void { 

@@ -1,21 +1,48 @@
 .informacion{
+    grid-area: productos;
     display: flex;
-    justify-content: space-between;
-    margin-left: 10%;
-    margin-right: 10% ;
-    margin-bottom: 3%;
-    margin-top: 2%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    width: 70%;
+    margin-left: 15%;
 }
-img{
-    width: 400px;
-    height: 450px;
-    margin-right: 5%;
-    border: 2px solid #4b270f;
+
+.img{
+    border: 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
-h2{
-    text-decoration: underline;
+
+.btn {
+  width: 30%;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background-color: #b1d7ff;
+  color: #0d3054;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
 }
-.body{
-    margin-top: 10%;
-    margin-left: 5%;
+
+.btn:hover {
+  background-color: #91c5ff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mensaje-agregado {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
 }

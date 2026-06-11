@@ -11,7 +11,8 @@ import { CarritoComponent } from './components/carrito/carrito.component';
 import { ProductoIdComponent } from './components/producto/producto.component';
 import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +28,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule, 
     ReactiveFormsModule,
+    NoopAnimationsModule,
+    ToastrModule.forRoot({
+          timeOut: 3000,
+          positionClass: 'toast-top-right',
+          preventDuplicates: true,
+        })
 ],
   providers: [
     provideClientHydration(withEventReplay())

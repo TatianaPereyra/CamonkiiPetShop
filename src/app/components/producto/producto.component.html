@@ -1,12 +1,32 @@
 <div class="informacion">
     <div class="info">
-        <h2>{{productoEspecifico.name}}</h2>
-        <img [src]="productoEspecifico.img" class="card-img-top" alt="imagen del producto">
+        <h2>
+            {{productoEspecifico.name}}
+        </h2>
+
+        <img [src]="productoEspecifico.img" class="img" alt="imagen del producto">
     </div>
+
     <div class="body">
-        <h4>{{productoEspecifico.price | currency}}</h4>
-        <p>{{productoEspecifico.breveDescripcion}}</p>
-        <p>{{productoEspecifico.descripcionCompleta}}</p>
+        <h4>
+            {{productoEspecifico.price | currency}}
+        </h4>
+
+        <p>
+            {{productoEspecifico.breveDescripcion}}
+        </p>
+
+        <p>
+            {{productoEspecifico.descripcionCompleta}}
+        </p>
+        
         <button class="btn btn-primary" (click)="agregarCarrito()">Agregar al Carrito</button>
+
+
+        <div class="mensaje-agregado" *ngIf="mostrarMensaje">
+            <p>Producto agregado al carrito</p>
+        </div>
+
     </div>
+
 </div>

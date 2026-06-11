@@ -1,3 +1,9 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 header{
   grid-area: header;
   display: flex;
@@ -33,6 +39,10 @@ header a:hover {
   color: #ffffff; 
 }
 
+header a.active {
+  color: #ffffff;
+}
+
 #productos{
   grid-area: productos;
   display: grid;
@@ -41,6 +51,8 @@ header a:hover {
     "title"
     "products";
   background-color: #f5f5f5;
+  padding-bottom: 40px;
+  flex: 1;
 }
 
 footer {
@@ -69,4 +81,3 @@ footer {
   margin: 6px 0;
   font-size: 1rem;
 }
-
