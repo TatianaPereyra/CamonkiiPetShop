@@ -16,7 +16,7 @@ export class RegistroUsuarioComponent {
 
   userForm = new FormGroup({
     nombreUsuario: new FormControl('', Validators.required, this.nombreUsuarioDisponibleValidator()),
-    mail: new FormControl('', Validators.email),
+    mail: new FormControl('', [Validators.required, Validators.email]),
     contrasenia: new FormControl('', [Validators.required, Validators.minLength(7)]),
     confirmarContrasenia: new FormControl('', Validators.required),
     nombre: new FormControl('', Validators.required),

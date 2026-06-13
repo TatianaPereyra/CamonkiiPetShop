@@ -1,57 +1,108 @@
-<div class="contenedorPrincipal">
-    <div class="datoForm">
-    <h2>¡Únete a nuestra comunidad Camonkii!</h2>
+<div class="logUp">
+    <h2>Crear Cuenta</h2>
     <form [formGroup]="userForm" (ngSubmit)="registrar()" class="formulario">
-    <!-- Nombre de usuario -->
-    <label for="nombreUsuario">Inserte nombre de usuario:</label>
-    <input type="text" formControlName="nombreUsuario">
-    <div *ngIf="userForm.get('nombreUsuario')?.touched && userForm.get('nombreUsuario')?.errors">
-        <small *ngIf="userForm.get('nombreUsuario')?.errors?.['required']">Este campo es obligatorio.</small>
-        <small *ngIf="userForm.get('nombreUsuario')?.errors?.['nombreUsuarioNoDisponible']">El nombre de usuario no está disponible.</small>
-    </div>
 
-    <!-- Nombre -->
-    <label for="nombre">Ingrese su nombre:</label>
-    <input type="text" formControlName="nombre">
-    <div *ngIf="userForm.get('nombre')?.touched && userForm.get('nombre')?.errors">
-        <small *ngIf="userForm.get('nombre')?.errors?.['required']">Este campo es obligatorio.</small>
-    </div>
+        <!-- Nombre de Usuario -->
 
-    <!-- Email -->
-    <label for="mail">Dirección de eMail:</label>
-    <input type="text" formControlName="mail">
-    <div *ngIf="userForm.get('mail')?.touched && userForm.get('mail')?.errors">
-        <small *ngIf="userForm.get('mail')?.errors?.['required']">Este campo es obligatorio.</small>
-        <small *ngIf="userForm.get('mail')?.errors?.['email']">El formato del email no es válido.</small>
-    </div>
+        <div class="form-field">
+            <label for="nombreUsuario">
+                Inserte nombre de usuario:
+            </label>
 
-    <!-- Contraseña -->
-    <label for="contrasenia">Contraseña:</label>
-    <input type="password" formControlName="contrasenia">
-    <div *ngIf="userForm.get('contrasenia')?.touched && userForm.get('contrasenia')?.errors">
-        <small *ngIf="userForm.get('contrasenia')?.errors?.['required']">Este campo es obligatorio.</small>
-        <small *ngIf="userForm.get('contrasenia')?.errors?.['minlength']">La contraseña debe tener al menos 7 caracteres.</small>
-    </div>
+            <input type="text" formControlName="nombreUsuario" id="nombreUsuario">
 
-    <!-- Confirmar contraseña -->
-    <label for="confirmarContrasenia">Confirmar contraseña:</label>
-    <input type="password" formControlName="confirmarContrasenia">
-    <div *ngIf="userForm.get('confirmarContrasenia')?.touched && userForm.get('confirmarContrasenia')?.errors">
-        <small *ngIf="userForm.get('confirmarContrasenia')?.errors?.['required']">Este campo es obligatorio.</small>
-    </div>
+            <div *ngIf="userForm.get('nombreUsuario')?.touched && userForm.get('nombreUsuario')?.errors">
+                <small *ngIf="userForm.get('nombreUsuario')?.errors?.['required']">
+                    Este campo es obligatorio.
+                </small>
 
-    <!-- Validación global: contraseñas distintas -->
-    <div *ngIf="userForm.errors?.['passwordsNoCoinciden'] && userForm.touched">
-        <small>Las contraseñas no coinciden.</small>
-    </div>
+                <small *ngIf="userForm.get('nombreUsuario')?.errors?.['nombreUsuarioNoDisponible']">
+                    El nombre de usuario no está disponible.
+                </small>
+            </div>
+        </div>
 
-    <!-- Botón de envío -->
-    <button type="submit">Registrarse</button>
+        <!-- Nombre -->
+
+        <div class="form-field">
+            <label for="nombre">
+                Ingrese su nombre:
+            </label>
+
+            <input type="text" formControlName="nombre" id="nombre">
+
+            <div *ngIf="userForm.get('nombre')?.touched && userForm.get('nombre')?.errors">
+                <small *ngIf="userForm.get('nombre')?.errors?.['required']">
+                    Este campo es obligatorio.
+                </small>
+            </div>
+        </div>
+
+        <!-- E-Mail -->
+
+        <div class="form-field">
+            <label for="mail">
+                Dirección de E-Mail:
+            </label>
+
+            <input type="email" formControlName="mail" id="mail">
+
+            <div *ngIf="userForm.get('mail')?.touched && userForm.get('mail')?.errors">
+                <small *ngIf="userForm.get('mail')?.errors?.['required']">
+                    Este campo es obligatorio.
+                </small>
+
+                <small *ngIf="userForm.get('mail')?.errors?.['email']">
+                    El formato del email no es válido.
+                </small>
+            </div>
+        </div>
+
+        <!-- Contraseña -->
+
+        <div class="form-field">
+            <label for="contrasenia">
+                Contraseña:
+            </label>
+
+            <input type="password" formControlName="contrasenia" id="contrasenia">
+
+            <div *ngIf="userForm.get('contrasenia')?.touched && userForm.get('contrasenia')?.errors">
+                <small *ngIf="userForm.get('contrasenia')?.errors?.['required']">
+                    Este campo es obligatorio.
+                </small>
+
+                <small *ngIf="userForm.get('contrasenia')?.errors?.['minlength']">
+                    La contraseña debe tener al menos 7 caracteres.
+                </small>
+            </div>
+        </div>
+
+        <!-- Confirmar Contraseña -->
+
+        <div class="form-field">
+            <label for="confirmarContrasenia">
+                Confirmar contraseña:
+            </label>
+
+            <input type="password" formControlName="confirmarContrasenia" id="confirmarContrasenia">
+
+            <div *ngIf="userForm.get('confirmarContrasenia')?.touched && userForm.get('confirmarContrasenia')?.errors">
+                <small *ngIf="userForm.get('confirmarContrasenia')?.errors?.['required']">
+                    Este campo es obligatorio.
+                </small>
+            </div>
+        </div>
+
+        <!-- Validación de contraseñas-->
+
+        <div *ngIf="userForm.errors?.['passwordsNoCoinciden'] && userForm.touched">
+            <small>
+                Las contraseñas no coinciden.
+            </small>
+        </div>
+
+        <button type="submit" [disabled]="userForm.invalid" >Registrarse</button>
+
     </form>
-    </div>
-
-    <div class="imagenRegistro">
-        <img src='img/fotoFom.jpg' alt="fotoMascotas">
-    </div>
-    
 </div>
