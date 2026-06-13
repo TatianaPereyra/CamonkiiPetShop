@@ -3,9 +3,12 @@ Pet Shop Online
  
 ## Descripcion
  
-Camonkii fue desarrollado originalmente como proyecto final para un seminario tecnologico en 2025. En 2026 fue retomado y mejorado, incorporando mejoras en el estilo visual y en la estructuracion de componentes.
- 
-La aplicacion permite a los usuarios explorar y comprar productos para mascotas. Para acceder a todas las funcionalidades, el usuario puede registrarse mediante un formulario con validaciones.
+Camonkii fue desarrollado originalmente como proyecto final para un seminario tecnologico en 2025. En 2026 fue retomado y mejorado, incorporando mejoras en el estilo visual y en la estructuracion de componentes. 
+
+## Aclaraciones
+Este proyecto es un trabajo de frontend desarrollado con fines de aprendizaje.
+Consume una mock API externa para simular el comportamiento del backend.
+El registro de usuario no persiste sesión ni almacena datos reales.
  
 ## Funcionalidades
  
